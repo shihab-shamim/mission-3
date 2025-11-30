@@ -5,6 +5,7 @@ const algorithm = "aes-256-cbc";
 const key = crypto.randomBytes(32);
 const iv = crypto.randomBytes(16);
 
+
 function encrypt(text) {
   const cipher = crypto.createCipheriv(algorithm, key, iv);
   let encrypted = cipher.update(text, "utf-8", "hex");
@@ -27,7 +28,7 @@ function decrypt(encryptedData, ivHex) {
   return decrypted;
 }
 
-console.log("Encrypted Data : ");
+// console.log("Encrypted Data : ");
 const sensitiveData = "My credit card: 4242 4242 4242 4242";
 console.log("original data : ", sensitiveData);
 

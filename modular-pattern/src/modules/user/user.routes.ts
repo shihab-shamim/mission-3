@@ -1,5 +1,4 @@
-import express, { Request, Response } from "express"
-import { pool } from "../../config/db"
+import express from "express"
 import { userController } from "./user.controller"
 
 
@@ -13,5 +12,7 @@ router.post("/",userController.createUser)
 router.get("/",userController.getUser)
 router.get("/:id",userController.getSingleUser)
 router.put("/:id",userController.updatedUser)
+router.put("/:id",userController.updatedUser)
+router.delete("/:id",userController.deleteUser)
 
 export const userRoute=router;

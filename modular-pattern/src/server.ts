@@ -32,36 +32,7 @@ app.use("/users",userRoute)
 
 
 
-app.delete("/users/:id", async (req: Request, res: Response) => {
-    const id = Number(req.params?.id);
-  
-    
-   
-   
-  try {
-    const result=await pool.query(`DELETE FROM users WHERE id=$1 `,[id])
-         if (result.rowCount === 0) {
-      return res.status(404).json({
-        success: false,
-        message: "User not found"
-      });
-    }
 
-    res.json({
-      success: true,
-      message: "User deleted successfully"
-    });
-        }
-    
-   catch (error:any) {
-
-    res.send({
-            // data:result.rows[0],
-             success:false,
-             message:"data get filed",
-        })
-  }
-});
 
 
 // todos 
